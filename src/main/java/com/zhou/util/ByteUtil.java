@@ -1,5 +1,7 @@
 package com.zhou.util;
 
+import java.io.UnsupportedEncodingException;
+
 public class ByteUtil {
 
     //协议包头
@@ -44,10 +46,16 @@ public class ByteUtil {
      * @param str
      * @return
      */
-    public static String str2HexStr(String str) {
+    public static String str2HexStr(String str)  {
         char[] chars = "0123456789ABCDEF".toCharArray();
         StringBuilder sb = new StringBuilder("");
-        byte[] bs = str.getBytes();
+        byte[] bs = new byte[0];
+        try {
+            //转为GBK
+            bs = str.getBytes("GBK");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         int bit;
         for (int i = 0; i < bs.length; i++) {
             bit = (bs[i] & 0x0f0) >> 4;
