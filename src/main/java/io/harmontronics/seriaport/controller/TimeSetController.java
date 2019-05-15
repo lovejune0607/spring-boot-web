@@ -24,8 +24,8 @@ public class TimeSetController {
         ArrayList ports = tool.findPort();
 
         String portName = null;
-        for(int i=0;i<ports.size();i++) {
-            portName = (String)ports.get(i);
+        for(Object port : ports ){
+            portName = (String) port;
         }
 
         if(portName != null){
