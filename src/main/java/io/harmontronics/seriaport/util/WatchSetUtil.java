@@ -47,11 +47,9 @@ public class WatchSetUtil {
             sum += addressByte[i];
         }
 
-        System.out.println("sum ======================" + sum);
 
         String hexSum = toHex(sum);
         String orderMessage = head + hexWatchAddress1+hexWatchAddress2+hexWatchAddress3+hexWatchAddress4 + order + hexAddress1+hexAddress2+hexAddress3+hexAddress4 +"00" + hexSum;
-        System.out.println(" orderMessage = " + orderMessage);
 
 
         //String orderMessage = head +address + content + hexMessage ;
